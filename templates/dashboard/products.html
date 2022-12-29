@@ -1,0 +1,135 @@
+{% extends 'partials/base.html' %}
+{% block title %} Products {% endblock %}
+
+{% block content %}
+    
+    <!-- table -->
+    <div class="container">
+
+        {% include 'partials/topnav.html' %}
+
+        <div class="row my-5">
+            <div class="col-md-4 mb-3">
+                <div class="border p-3 dark-color">
+                    <h4 class="text-center">
+                        Add Products
+                    </h4>
+                    <hr>
+                    <form class="d-grid" action="">
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="formCategory" class="form-label">Category</label>
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                  <option selected>None</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                                <label for="floatingSelect">Choose...</label>
+                              </div>
+                        </div>
+                    
+                        
+                        <input class="btn btn-success" type="submit" value="Add Product">
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md-8 my-5">
+                <table class="table dark-color">
+                    <thead class="bg-info">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col" class="text-center">Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">HP Laptop</th>
+                            <td>Electronics</td>
+                            <td>50</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <div class="">
+                                        <a href=""><div class="btn btn-success btn-sm">Edit</div></a>                                    
+                                    </div>
+                                    <div class="">
+                                        <a href=""><div class="btn btn-danger btn-sm">Delete</div></a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Toshiba Pendrive</th>
+                            <td>Electronics</td>
+                            <td>120</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <div class="">
+                                        <a href=""><div class="btn btn-success btn-sm">Edit</div></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><div class="btn btn-danger btn-sm">Delete</div></a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Basic Mechanics Vol 1.</th>
+                            <td>Stationary</td>
+                            <td>20</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <div class="">
+                                        <a href=""><div class="btn btn-success btn-sm">Edit</div></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><div class="btn btn-danger btn-sm">Delete</div></a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Marker</th>
+                            <td>Stationary</td>
+                            <td>150</td>
+                            <td>
+                                <div class="d-flex justify-content-around">
+                                    <div class="">
+                                        <a href=""><div class="btn btn-success btn-sm">Edit</div></a>
+                                    </div>
+                                    <div class="">
+                                        <a href=""><div class="btn btn-danger btn-sm">Delete</div></a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>        
+    </div>
+    <!-- table ends  -->
+
+{% endblock %}
+
+
+

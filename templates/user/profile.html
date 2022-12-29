@@ -1,0 +1,82 @@
+{% extends 'partials/base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Profile Page
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="text-dark">
+                                        {{user.username}} Profile Information
+                                    </h4>
+                                    <a href=""><div class="btn btn-info btn-sm">Edit</div></a>
+                                </div>
+                                <hr>
+
+                                <div class="container">
+
+                                    <div class="row ">
+                                        
+                                        <div class="col mt-3">
+                                            <table class="table table-borderless">
+                                                
+                                                <tbody>
+                                                    
+                                                    <tr>
+                                                        <th scope="row">First Name</th>
+                                                        <td>{{user.first_name}}</td>
+                                                       
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Last Name</th>
+                                                        <td>{{user.last_name}}</td>
+                                                       
+                                                    </tr>
+                                    
+                                                    <tr>
+                                                        <th scope="row">Email</th>
+                                                        <td>{{user.email}}</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Phone</th>
+                                                        <td>{{user.profile.phone}}</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Address</th>
+                                                        <td>{{user.profile.address}}</td>
+                                                       
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>        
+                                </div>
+                            </div>
+                            <div class="col-md-4" >
+                                <img class="img-thumbnail" src="{{user.profile.image.url}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+
+    
+{% endblock %}
+

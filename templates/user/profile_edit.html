@@ -1,0 +1,15 @@
+{% extends 'partials/base.html' %}
+{% block title %} Profile {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" action="">
+            {{form | crispy}}
+            {%csrf_token%}
+            <input type="submit">
+        </form>
+
+    </div>
+
+{% endblock %}

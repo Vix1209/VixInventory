@@ -1,0 +1,69 @@
+{% extends 'partials/base.html' %}
+{% block title %} Orders {% endblock %}
+
+{% block content %}
+    
+    <!-- table -->
+    <div class="container">
+
+        {% include 'partials/topnav.html' %}
+
+        <div class="row ">
+            <div class="col-md-2">
+                
+            </div>
+            <div class="col-md-8 mt-3">
+                <table class="table dark-color">
+                    <thead class="bg-info">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Order By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">HP Laptop</th>
+                            <td>Electronics</td>
+                            <td>1</td>
+                            <td>
+                                Chijioke
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Toshiba Pendrive</th>
+                            <td>Electronics</td>
+                            <td>3</td>
+                            <td>
+                                Uchenna
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Eraser</th>
+                            <td>Stationary</td>
+                            <td>20</td>
+                            <td>
+                                Jude
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Marker</th>
+                            <td>Stationary</td>
+                            <td>50</td>
+                            <td>
+                                Somto
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+        </div>        
+    </div>
+    <!-- table ends  -->
+
+
+{% endblock %}
