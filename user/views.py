@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from . import forms
 from .models import Profile
@@ -10,7 +9,7 @@ def register (request):
         form =  forms.CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('user-profile_edit')
+            return redirect('user-login')
     else:
         form =  forms.CreateUserForm()
         
@@ -31,22 +30,6 @@ def login (request):
 def logout (request):
     return render(request, 'user/logout.html')
 
-
-
-def profile_edit (request):
-    if request.method == 'POST':
-        form =  forms.UserProfileForm(request.POST)
-    
-        if form.is_valid():
-            form.save()
-            return redirect('user-login')
-    else:
-        form =  forms.UserProfileForm()
-        
-    context = {
-        'form': form,
-    }
-    return render(request, 'user/profile_edit.html', context)
 
 
 def profile (request):
