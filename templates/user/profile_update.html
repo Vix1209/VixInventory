@@ -25,11 +25,13 @@
                                 </div>
                                 <hr>
 
-                                    <form class="d-grid" method="POST" enctype="multipart/form-data" action="">
+                                    <form method="POST" enctype="multipart/form-data" action="">
                                         {% csrf_token %}
                                         {{user_form | crispy}}
                                         {{profile_form | crispy}}
-                                        <input class="btn btn-info mt-5" type="submit" value="Update">
+                                       
+                                        <input class="btn btn-info mt-5 " type="submit" value="Update">
+                                        
                                     </form>        
                             </div>
                         </div>
