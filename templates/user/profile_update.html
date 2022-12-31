@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        Profile Page
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="d-flex justify-content-between">
+                                    <h4 class="text-dark">
+                                        Edit Profile 
+                                    </h4>
+                                </div>
+                                <hr>
+
+                                    <form class="d-grid" method="POST" enctype="multipart/form-data" action="">
+                                        {% csrf_token %}
+                                        {{user_form | crispy}}
+                                        {{profile_form | crispy}}
+                                        <input class="btn btn-info mt-5" type="submit" value="Update">
+                                    </form>        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+
+    
+{% endblock %}
+
