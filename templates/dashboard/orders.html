@@ -20,42 +20,26 @@
                             <th scope="col">Category</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Order By</th>
+                            <th scope="col">Date</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
+                        {% for purchase in order %}
                         <tr>
-                            <th scope="row">HP Laptop</th>
-                            <td>Electronics</td>
-                            <td>1</td>
+                            <td>{{purchase.product}}</td>
+                            <td>{{purchase.product.category}}</td>
+                            <td>{{purchase.order_quantity}}</td>
                             <td>
-                                Chijioke
+                                {{purchase.staff}}
                             </td>
+                            <td>{{purchase.date}}</td>
+
                         </tr>
-                        <tr>
-                            <th scope="row">Toshiba Pendrive</th>
-                            <td>Electronics</td>
-                            <td>3</td>
-                            <td>
-                                Uchenna
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Eraser</th>
-                            <td>Stationary</td>
-                            <td>20</td>
-                            <td>
-                                Jude
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Marker</th>
-                            <td>Stationary</td>
-                            <td>50</td>
-                            <td>
-                                Somto
-                            </td>
-                        </tr>
+                        {% endfor %}    
                     </tbody>
+                    
+
                   </table>
             </div>
             <div class="col-md-2">

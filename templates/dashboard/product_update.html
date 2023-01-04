@@ -1,0 +1,32 @@
+{% extends 'partials/base.html' %}
+{% block title %} Delete Item {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="border bg-white p-3">
+                    <div>
+                        <h3 class="text-center">
+                            Edit Item
+                        </h3>
+                    </div>
+                    <hr>
+                    <form class=" d-grid px-5 text-center" method = 'POST'>
+                        {% csrf_token %}
+                        {{form }}
+                        <div class="text-center">
+                            <input class="btn btn-success px-5 ms-5 mt-4" type="submit" value="Update">
+                            <a class="btn btn-secondary px-5 me-5 mt-4" href="{% url 'dashboard-products'%}">Cancel </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

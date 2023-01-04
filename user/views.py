@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from . import forms
 from .models import Profile
+from django.contrib import messages
 
 # Create your views here.
 def register (request):
@@ -9,6 +10,8 @@ def register (request):
         form =  forms.CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            staff_name = form.cleaned_data.get('username')
+            message = messages.success (request, f'New account successfully created for "{staff_name}", Proceed to login')
             return redirect('user-login')
     else:
         form =  forms.CreateUserForm()

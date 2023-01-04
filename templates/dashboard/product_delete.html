@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+{% block title %} Delete Item {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="border bg-white p-3">
+                    <div class="alert alert-danger">
+                        <h4 class="text-center">Are You Sure You Want To Delete This Item</h4>
+                    </div>
+                    <hr>
+                    <form class="d-flex justify-content-around " method = 'POST'>
+                        {% csrf_token %}
+                        {{form}}
+                        <input class="btn btn-danger px-5 ms-5 mt-4" type="submit" value="Yes">
+                        <a class="btn btn-secondary px-5 me-5 mt-4" href="{% url 'dashboard-products'%}"> No </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -16,29 +16,23 @@
                     <thead class="bg-info">
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col">First</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Phone</th>
                             <th scope="col" class="text-center">Email</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for worker in workers %}
                         <tr>
                             <th scope="row">
-                                <div class="btn btn-info text-black btn-sm">View</div>
+                               <a href="{% url 'dashboard-staff-detail' worker.id%}"><div class="btn btn-info text-black btn-sm">View</div></a> 
                             </th>
-                            <td>Ofor</td>
-                            <td>08100608127</td>
-                            <td class="text-center">ucheofor2015@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <div class="btn btn-info text-black btn-sm">View</div>
-                            </th>
-                            <td>Uchenna</td>
-                            <td>09011854740</td>
-                            <td class="text-center">ucheofor2013@yahoo.com</td>
+                            <td>{{worker.username}}</td>
+                            <td>{{worker.profile.phone}}</td>
+                            <td class="text-center">{{worker.email}}</td>
                         </tr>
                         
+                        {% endfor %}
                     </tbody>
                   </table>
             </div>
