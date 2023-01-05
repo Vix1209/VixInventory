@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Product, Order
-from .forms import ProductForm
+from .forms import ProductForm, OrderForm
 from django.contrib.auth.models import User
 from django.contrib import messages 
 
@@ -34,7 +34,21 @@ from django.contrib import messages
 
 @login_required
 def index(request):
-   return render(request, 'dashboard/index.html')
+    orders = Order.objects.all()
+    if request.method == 'POST':
+        forms = OrderForm(request.POST)
+        if forms.is_valid():
+            instance =  forms.save(commit=False)
+            instance.staff = request.user
+            instance.save()
+            return redirect('dashboard-index')
+    else:
+        forms = OrderForm()
+    context = { 
+        'orders':orders,
+        'forms': forms
+    }
+    return render(request, 'dashboard/index.html', context)
 
 
 
@@ -134,9 +148,12 @@ def product_delete(request, pk): #pk is the argument that represents the primary
     
 @login_required
 def orders(request):
-    order = Order.objects.all()  
+    order = Order.objects.all() 
+           
     context = {
-        'order': order
+        'order': order,
+        
     }
     return render(request, 'dashboard/orders.html', context )
+
 
