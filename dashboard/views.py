@@ -34,6 +34,16 @@ from django.contrib import messages
 
 @login_required
 def index(request):
+    workers = User.objects.all()
+    workers_count = workers.count()
+    
+    items = Product.objects.all()   
+    items_count = items.count()
+    
+    order = Order.objects.all()
+    order_count = order.count()
+    
+    
     orders = Order.objects.all()
     products = Product.objects.all()
     if request.method == 'POST':
@@ -49,6 +59,9 @@ def index(request):
         'orders':orders,
         'forms': forms,
         'products': products,
+        'items_count':items_count,
+        'workers_count':workers_count,
+        'order_count': order_count,
     }
     return render(request, 'dashboard/index.html', context)
 
@@ -58,8 +71,20 @@ def index(request):
 @login_required
 def staff(request):
     workers = User.objects.all()
+    workers_count = workers.count()
+    
+    items = Product.objects.all()   
+    items_count = items.count()
+    
+    order = Order.objects.all()
+    order_count = order.count()
+    
     context = {
         'workers':workers,
+        'items_count':items_count,
+        'workers_count':workers_count,
+        'order_count': order_count,
+
     }
     
     return render(request, 'dashboard/staff.html', context)
@@ -79,6 +104,12 @@ def staff_detail(request, pk):
 
 @login_required
 def products(request):
+    workers = User.objects.all()
+    workers_count = workers.count()
+    
+    order = Order.objects.all()
+    order_count = order.count()
+    
     #CRUD:
 
     #READ
@@ -98,7 +129,7 @@ def products(request):
     # this grabs all the data in the product table in the database, and saves into the variable 'items'
     items = Product.objects.all()   #this collects all the data from the product model
     #items = Product.objects.raw('SELECT * FROM dashboard_product')   #Normal SQL logic
-    
+    items_count = items.count()
     
     # in the context, the dictionary shows the 'items' key which is what will be written in the frontend. #
     # while the value represents the items variable above
@@ -106,6 +137,9 @@ def products(request):
     context = {
         'items': items,
         'form': form,
+        'items_count':items_count,
+        'workers_count':workers_count,
+        'order_count': order_count,
     }
     return render(request, 'dashboard/products.html', context)    
 
@@ -150,11 +184,21 @@ def product_delete(request, pk): #pk is the argument that represents the primary
     
 @login_required
 def orders(request):
-    order = Order.objects.all() 
+    workers = User.objects.all()
+    workers_count = workers.count()
+    
+    items = Product.objects.all()   
+    items_count = items.count()
+    
+    order = Order.objects.all()
+    order_count = order.count()
            
     context = {
         'order': order,
-        
+        'items_count':items_count,
+        'workers_count':workers_count,
+        'order_count': order_count,
+
     }
     return render(request, 'dashboard/orders.html', context )
 
