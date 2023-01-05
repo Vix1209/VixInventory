@@ -38,9 +38,9 @@ def index(request):
     if request.method == 'POST':
         forms = OrderForm(request.POST)
         if forms.is_valid():
-            instance =  forms.save(commit=False)
-            instance.staff = request.user
-            instance.save()
+            instance =  forms.save(commit=False) #this line of code "commit = False" does a very crucuial task of pausing the save() method process from occuring
+            instance.staff = request.user # That is to allow this line of code w=to run successfully. This line assigns the currently authenticated user 'request.user' to the particular order it was created from
+            instance.save() # then and only then can this the form (instance) be saved
             return redirect('dashboard-index')
     else:
         forms = OrderForm()
