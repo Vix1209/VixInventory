@@ -1,0 +1,14 @@
+
+.myCard:hover{
+    transform: scale(1.08);
+    transition: 0.2s ease-in-out;
+}
+
+.dark-color{
+    background-color: #F8F8F8;
+}
+
+.dark-color canvas{
+    height: 100px;
+}
+
