@@ -3,4 +3,5 @@ Vixinventory... A fullstack webapp showcasing the utilization of django authenti
 Admin Login Details
 
 Username : admin
+
 password : 7777777777yt
