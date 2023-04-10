@@ -92,7 +92,7 @@ DATABASES = {
         'NAME' :    'vixinventory',
         'USER' :    'postgres',
         'PASSWORD': 'Ucvickazzy01@#/...',
-        'HOST' :    'localhost',
+        'HOST' :    ['localhost', 'vixinventory.onrender.com'],
         'PORT' :    '5432',
     }
 }
