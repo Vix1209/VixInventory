@@ -26,7 +26,7 @@ SECRET_KEY = 'odim0g57x6i5&ky^pzt@(-56yrvl24j2#t8%t6%@s4f10(wr%*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vixinventory.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['vixinventory.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -92,13 +92,14 @@ DATABASES = {
         'NAME' :    'vixinventory',
         'USER' :    'postgres',
         'PASSWORD': 'Ucvickazzy01@#/...',
-        'HOST' :    ['localhost', 'vixinventory.onrender.com'],
+        'HOST' :    'localhost',
         'PORT' :    '5432',
     }
 }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
