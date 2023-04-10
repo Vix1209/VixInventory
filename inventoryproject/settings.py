@@ -26,7 +26,7 @@ SECRET_KEY = 'odim0g57x6i5&ky^pzt@(-56yrvl24j2#t8%t6%@s4f10(wr%*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vixinventory.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
