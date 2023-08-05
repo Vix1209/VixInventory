@@ -5,7 +5,7 @@
     
     
     <div class="container py-1">
-        {% if user.is_authenticated %}
+        
         <a class="navbar-brand text-dark border border-dark p-2 rounded-pill shadow"  href="{% url 'dashboard-index' %}">
             VixInventory
         </a>
@@ -13,27 +13,28 @@
             <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% if user.is_authenticated %}
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active text-dark fw-bold" aria-current="page" href="{% url 'user-profile' %}">{{user.username}}'s Profile</a>
+                        <a class="nav-link active text-dark fw-bold" aria-current="page" href="{% url 'user-profile' %}"><button class="btn btn-outline-dark rounded">{{user.username}}'s Profile</button></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white " href="{% url 'user-logout' %}"><button class="btn btn-danger rounded-pill">Logout</button></a>
                     </li>
-            </ul>
+                </ul>
 
-            {% else %}
+        {% else %}
  
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item">
-                <a class="nav-link active text-dark fw-bold" aria-current="page" href="{% url 'user-register' %}">Register</a>
+                <a class="nav-link active text-dark fw-bold" aria-current="page" href="{% url 'user-register' %}"><button class="btn btn-danger">Register</button></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link text-white " href="{% url 'user-login' %}"><button class="btn btn-success rounded-pill">Login</button></a>
+                <a class="nav-link text-white " href="{% url 'user-login' %}"><button class="btn btn-success">Login</button></a>
                 </li>
             </ul>
 
-            {% endif %}
+        {% endif %}
         </div>
     </div>
 
