@@ -5,10 +5,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    #will have logic being put in views.py
     path('register', views.register, name= 'user-register'),
     path('profile/', views.profile, name = 'user-profile'),
     path('profile/edit/', views.profile_update, name = 'user-profile-update'),
     
+    # these have django authviews to handle them
     path('', auth_views.LoginView.as_view(template_name = 'user/login.html') , name= 'user-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name = 'user/logout.html'), name= 'user-logout'),
     

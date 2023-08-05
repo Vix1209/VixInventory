@@ -30,7 +30,7 @@ class Product(models.Model):
     
     
 class Order(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null = True) # This creates a relationship between the order model and the Product model using a Foreign Key
+    product = models.ForeignKey(Product,  on_delete=models.CASCADE, null = True) # This creates a relationship between the order model and the Product model using a Foreign Key
                                                                                 # 'on_delete = models.CASCADE' this means if an item in the product model is deleted, the same thing will happen in the order model
     staff = models.ForeignKey(User, on_delete=models.CASCADE, null=True) #the model 'User' is the same defined in the admin panel already created for us
     order_quantity = models.PositiveIntegerField(null = True) # this means that the number of orders will always be positive
