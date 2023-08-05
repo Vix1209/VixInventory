@@ -179,4 +179,4 @@ EMAIL_HOST_USER = 'ucheofor22@gmail.com'
 EMAIL_HOST_PASSWORD = 'gsmvuqaffoojecjb'
 
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+# DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
