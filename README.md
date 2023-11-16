@@ -1,7 +1,9 @@
-Vixinventory... A fullstack webapp showcasing the utilization of django authentication, authorization and CRUD functionalities in the creation of logic for a simple ecommerce site, that takes in authenticated Users' Orders, matches them with products available, and informs the admin on these orders made. As well as keeping track of these users, their profile information and details.
+# Vixinventory
 
-Admin Login Details:
+A fullstack webapp showcasing the utilization of Django authentication, authorization and CRUD functionalities in the creation of logic for a simple e-commerce web app.∖
+Taking into account these users' orders, matching them with products available, also their profile information and details,
 
-Username : Admin
+### Admin Login Details:∖
 
-password : Admin
+Username : Admin∖
+password : Admin∖
